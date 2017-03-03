@@ -26,7 +26,8 @@ canvas.drawShapesWithFill = true
 canvas.drawShapesWithBorders = false
 
 //random number between 1-10 for colour
-let randcol = random(from: 1, toButNotIncluding: 11)
+let randbright = random(from: 40, toButNotIncluding: 76)
+
 
 // This loop makes a 10 rows of columns
 for x in stride(from: 25, through: 475, by: 50){
@@ -35,14 +36,15 @@ for x in stride(from: 25, through: 475, by: 50){
         
         // Draw the shapes
         if y >= 300 {
-            canvas.fillColor = Color.green
+            canvas.fillColor = Color(hue: 100, saturation: 100, brightness: Float(randbright), alpha: 100)
         }
         else{
-            canvas.fillColor = Color.black
+            canvas.fillColor = Color(hue: 30, saturation: 100, brightness: Float(randbright), alpha: 100)
         }
         canvas.drawRectangle(centreX: x, centreY: y, width: 50, height: 50)
     }
 }
+
 
 
 /*:
