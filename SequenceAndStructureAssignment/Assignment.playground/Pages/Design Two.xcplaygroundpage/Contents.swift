@@ -21,25 +21,18 @@ import PlaygroundSupport
 // Create canvas
 let canvas = Canvas(width: 500, height: 500)
 
-// Generate a grid
+// Draw Rectangles
 canvas.drawShapesWithFill = false
-canvas.defaultBorderWidth = 1
+//make the origin in the middle
+canvas.translate(byX: 250, byY: 250)
 
-// This loop makes a 10 rows of columns
-for x in stride(from: 25, through: 475, by: 50){
-    
-    // This loop makes a single column, bottom to top
-    for y in stride(from: 25, through: 475, by: 50) {
-        
-        // Draw the shapes
-        canvas.drawRectangle(centreX: x, centreY: y, width: 50, height: 50)
-    }
+for x in stride(from: 0, through: 500, by: 3){
+    let rand = random(from: 0, toButNotIncluding: 250)
+    canvas.rotate(by: 10)
+    canvas.borderColor = Color.init(hue: Float(rand), saturation: 100, brightness: 100, alpha: 75)
+    canvas.drawRectangle(centreX: 0, centreY: 0, width: x, height: x, borderWidth: 1)
 }
-for x in stride(from: 0, through: 250, by: 5){
-    for y in stride(from: 0, through: 50, by: 1){
-        canvas.drawLine(fromX: x, fromY: y, toX: x + 50, toY: y + 50)
-    }
-}
+
 /*:
  ## Template code
  The code below is necessary to see results in the Assistant Editor at right. Please do not remove.

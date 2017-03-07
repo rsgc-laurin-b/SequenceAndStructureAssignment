@@ -26,13 +26,11 @@ canvas.drawShapesWithFill = true
 canvas.drawShapesWithBorders = true
 canvas.defaultBorderWidth = 1
 
-
-
 // This loop makes a 10 rows of columns
 for x in stride(from: 25, through: 475, by: 50){
     // This loop makes a single column, bottom to top
     for y in stride(from: 25, through: 475, by: 50) {
-        let randbright = random(from: 40, toButNotIncluding: 76)
+        let randbright = random(from: 50, toButNotIncluding: 86)
 
         // Draw the shapes
         if y >= 300 {
@@ -44,6 +42,9 @@ for x in stride(from: 25, through: 475, by: 50){
         canvas.drawRectangle(centreX: x, centreY: y, width: 50, height: 50)
     }
 }
+canvas.defaultLineWidth = 2
+canvas.drawLine(fromX: 0, fromY: 300, toX: 500, toY: 300)
+
 /*:
  ## Template code
  The code below is necessary to see results in the Assistant Editor at right. Please do not remove.
