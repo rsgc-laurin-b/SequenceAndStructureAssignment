@@ -23,17 +23,17 @@ let canvas = Canvas(width: 500, height: 500)
 
 // Generate a grid
 canvas.drawShapesWithFill = true
-canvas.drawShapesWithBorders = false
+canvas.drawShapesWithBorders = true
+canvas.defaultBorderWidth = 1
 
-//random number between 1-10 for colour
-let randbright = random(from: 40, toButNotIncluding: 76)
 
 
 // This loop makes a 10 rows of columns
 for x in stride(from: 25, through: 475, by: 50){
     // This loop makes a single column, bottom to top
     for y in stride(from: 25, through: 475, by: 50) {
-        
+        let randbright = random(from: 40, toButNotIncluding: 76)
+
         // Draw the shapes
         if y >= 300 {
             canvas.fillColor = Color(hue: 100, saturation: 100, brightness: Float(randbright), alpha: 100)
@@ -44,9 +44,6 @@ for x in stride(from: 25, through: 475, by: 50){
         canvas.drawRectangle(centreX: x, centreY: y, width: 50, height: 50)
     }
 }
-
-
-
 /*:
  ## Template code
  The code below is necessary to see results in the Assistant Editor at right. Please do not remove.
