@@ -19,19 +19,20 @@ import Cocoa
 import PlaygroundSupport
 
 // Create canvas
-let canvas = Canvas(width: 500, height: 500)
+let canvas = Canvas(width: 500, height: 500, quality: Quality.High)
 
 // Draw Rectangles
 canvas.drawShapesWithFill = false
 //make the origin in the middle
 canvas.translate(byX: 250, byY: 250)
 
-for x in stride(from: 0, through: 500, by: 3){
+for x in stride(from: 0, through: 500, by: 6){
     let rand = random(from: 0, toButNotIncluding: 250)
     canvas.rotate(by: 10)
     canvas.borderColor = Color.init(hue: Float(rand), saturation: 100, brightness: 100, alpha: 75)
     canvas.drawRectangle(centreX: 0, centreY: 0, width: x, height: x, borderWidth: 1)
 }
+canvas.copyToClipboard()
 
 /*:
  ## Template code
